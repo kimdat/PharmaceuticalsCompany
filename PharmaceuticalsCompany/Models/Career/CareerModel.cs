@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PharmaceuticalsCompany.Models.Candidate
-{
-    public class CandidateModel
+namespace PharmaceuticalsCompany.Models.Career
+{ 
+    public class CareerModel
     {
         [Required]
         public string Email { get; set; }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using PharmaceuticalsCompany.Models.Candidate;
+using PharmaceuticalsCompany.Models.Career;
 
 
 namespace PharmaceuticalsCompany.Data

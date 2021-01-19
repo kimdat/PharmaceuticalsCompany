@@ -33,5 +33,4 @@ D:\FPTAPTECH\DoAn\PharmaceuticalsCompany\PharmaceuticalsCompany\obj\Debug\netcor
 D:\FPTAPTECH\DoAn\PharmaceuticalsCompany\PharmaceuticalsCompany\obj\Debug\netcoreapp2.1\PharmaceuticalsCompany.pdb
 D:\FPTAPTECH\DoAn\PharmaceuticalsCompany\PharmaceuticalsCompany\obj\Debug\netcoreapp2.1\PharmaceuticalsCompany.csproj.CopyComplete
 D:\FPTAPTECH\DoAn\PharmaceuticalsCompany\PharmaceuticalsCompany\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
-D:\FPTAPTECH\DoAn\PharmaceuticalsCompany\PharmaceuticalsCompany\obj\Debug\netcoreapp2.1\Razor\Views\Candidate\Register.g.cshtml.cs
-D:\FPTAPTECH\DoAn\PharmaceuticalsCompany\PharmaceuticalsCompany\obj\Debug\netcoreapp2.1\Razor\Views\Candidate\Login.g.cshtml.cs
+D:\FPTAPTECH\DoAn\PharmaceuticalsCompany\PharmaceuticalsCompany\obj\Debug\netcoreapp2.1\Razor\Views\Career\authentication.g.cshtml.cs

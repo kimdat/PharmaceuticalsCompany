@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using PharmaceuticalsCompany.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PharmaceuticalsCompany.Services.Candidate;
+using PharmaceuticalsCompany.Services.Career;
 namespace PharmaceuticalsCompany
 {
     public class Startup
@@ -33,7 +33,7 @@ namespace PharmaceuticalsCompany
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-            services.AddScoped<ICandidateService, CandidateServiceImpl>();
+            services.AddScoped<ICareerService, CareerServiceImpl>();
             //ADD IDENTITY
           services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -67,7 +67,7 @@ namespace PharmaceuticalsCompany
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Candidate}/{action=Register}/{id?}");
+                    template: "{controller=Career}/{action=Authentication}/{id?}");
             });
         }
     }

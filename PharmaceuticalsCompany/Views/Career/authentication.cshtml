@@ -1,0 +1,95 @@
+﻿@model PharmaceuticalsCompany.Models.Career.CareerModel
+@{
+    ViewData["Title"] = "Login";
+}
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+
+    <div class="page-content">
+        <div class="row form-v8-content">
+            <div class="col-lg-5 form-left">
+                <img  src="~/images/candidate1.jpeg"  alt="form">
+            </div>
+            <div class="col-lg-7 form-right">
+                <div class="tab">
+                    <div class="tab-inner">
+                        <button class="tablinks" onclick="openCity(event, 'sign-up')" id="defaultOpen">Sign Up</button>
+                    </div>
+                    <div class="tab-inner">
+                        <button class="tablinks" onclick="openCity(event, 'sign-in')">Sign In</button>
+                    </div>
+                </div>
+                @using (Html.BeginForm("login", "Career"))
+                {
+                    <div class="tabcontent" id="sign-up">
+                        <div class="content">
+                            <div class="form-group">
+                                <i class="fa fa-envelope"></i>
+                                <label>Email:</label>
+                                <input type="text" class="form-control" name="Email">
+                            </div>
+                            <div class="form-group">
+                                <i class="fas fa-key"></i>
+                                <label>PassWord:</label>
+                                <input type="text" class="form-control" name="PassWord">
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Submit" />
+                    </div>
+
+                }
+                @using (Html.BeginForm("register", "Career"))
+                {
+                    <div class="tabcontent" id="sign-in">
+
+                        
+                        <div class="content">
+                            <div class="form-group">
+                                <i class="fa fa-envelope"></i>
+                                <label>Email:</label>
+                                <input type="text" class="form-control" name="Email">
+                            </div>
+                            <div class="form-group">
+                                <i class="fas fa-key"></i>
+                                <label>PassWord:</label>
+                                <input type="text" class="form-control" name="PassWord">
+                            </div>
+                            <div class="form-group">
+                                <i class="fas fa-key"></i>
+                                <label>ConfirmPassWord:</label>
+                                <input type="text" class="form-control" name="ConfirmPassWord">
+                            </div>
+                        </div>
+                        
+                            <input type="submit" class="btn btn-primary" value="Submit" />
+                    </div>
+
+
+                    
+                }
+                </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>

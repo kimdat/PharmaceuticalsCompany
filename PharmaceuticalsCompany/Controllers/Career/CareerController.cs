@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using PharmaceuticalsCompany.Services.Candidate;
-using PharmaceuticalsCompany.Models.Candidate;
+using PharmaceuticalsCompany.Services.Career;
+using PharmaceuticalsCompany.Models.Career;
 namespace PharmaceuticalsCompany.Controllers.Candidate
 {
-    public class CandidateController : Controller
+    public class CareerController : Controller
     {
-        private  ICandidateService services;
-        public CandidateController(ICandidateService services)
+        private  ICareerService services;
+        public CareerController(ICareerService services)
         {
             this.services = services;
         }
@@ -18,13 +18,13 @@ namespace PharmaceuticalsCompany.Controllers.Candidate
         {
             return View();
         }
-        public IActionResult Login()
+        public IActionResult Authentication()
         {
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(CandidateModel candidate)
+        public async Task<IActionResult> Login(CareerModel candidate)
         {
 
                 var model = await services.Login(candidate);
@@ -53,7 +53,7 @@ namespace PharmaceuticalsCompany.Controllers.Candidate
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(CandidateModel candidate)
+        public async Task<IActionResult> Register(CareerModel candidate)
         {
           
                 try

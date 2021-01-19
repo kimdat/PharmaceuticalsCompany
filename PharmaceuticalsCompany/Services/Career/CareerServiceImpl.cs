@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-using PharmaceuticalsCompany.Models.Candidate;
+using PharmaceuticalsCompany.Models.Career;
 
-namespace PharmaceuticalsCompany.Services.Candidate
+namespace PharmaceuticalsCompany.Services.Career
 {
-    public class CandidateServiceImpl : ICandidateService
+    public class CareerServiceImpl : ICareerService
     {
         private readonly UserManager<IdentityUser> _um;
         private readonly SignInManager<IdentityUser> _sm;
-        public CandidateServiceImpl(UserManager<IdentityUser> um, SignInManager<IdentityUser> sm)
+        public CareerServiceImpl(UserManager<IdentityUser> um, SignInManager<IdentityUser> sm)
         {
             _um = um;
             _sm = sm;
 
         }
-        public async Task<CandidateModel> Login(CandidateModel candidate)
+        public async Task<CareerModel> Login(CareerModel candidate)
         {
                 var result = await _sm.PasswordSignInAsync(candidate.Email, candidate.PassWord, false, false);
                 if(result.Succeeded)
@@ -30,13 +30,13 @@ namespace PharmaceuticalsCompany.Services.Candidate
                 }
         }
 
-        public async Task<CandidateModel> Logout()
+        public async Task<CareerModel> Logout()
         {
             await _sm.SignOutAsync();
             return null;
         }
 
-        public  async Task<CandidateModel> Register(CandidateModel model)
+        public  async Task<CareerModel> Register(CareerModel model)
         {
             var user = new IdentityUser
             {
