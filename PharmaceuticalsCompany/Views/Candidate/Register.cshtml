@@ -1,0 +1,33 @@
+﻿@model PharmaceuticalsCompany.Models.Candidate.CandidateModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>Register</h2>
+@using (Html.BeginForm())
+{
+<div>
+    <div>
+        <label>Email:</label>
+        @Html.EditorFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+    <div>
+        <label>PassWord:</label>
+        @Html.EditorFor(model => model.PassWord)
+        @Html.ValidationMessageFor(model => model.PassWord)
+    </div>
+    <div>
+        <label>ConFirmPassWord:</label>
+        @Html.EditorFor(model => model.ConfirmPassWord)
+        @Html.ValidationMessageFor(model => model.ConfirmPassWord)
+    </div>
+    <div>
+
+        <input type="submit" value="Create" />
+    </div>
+
+</div>
+
+    @ViewBag.Msg
+}
