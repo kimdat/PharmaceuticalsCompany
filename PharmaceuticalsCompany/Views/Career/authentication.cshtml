@@ -4,146 +4,178 @@
 }
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
-
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
-
-<div class="page-content">
-    <div class="row form-v8-content">
-        <div class="col-lg-5 form-left">
-            <img src="~/images/candidate1.jpeg" alt="form">
-        </div>
-        <div class="col-lg-7 form-right">
-            <div class="tab">
-                <div class="tab-inner">
-                    <button class="tablinks" onclick="openCity(event, 'sign-up')" id="defaultOpen">Sign Up</button>
-                </div>
-                <div class="tab-inner">
-                    <button class="tablinks"  onclick="openCity(event, 'sign-in')">Sign In</button>
-                </div>
-            </div>
-            @using (Html.BeginForm("login", "Career"))
-            {
-                <div class="tabcontent" id="sign-up">
-                    <div class="content">
-                        <div class="form-group">
-                            <i class="fa fa-envelope"></i>
-                            <label>Email:</label>
-                            <input type="text" class="form-control" name="Email">
-                            @Html.ValidationMessageFor(x => x.Email)
-                        </div>
-                        <div class="form-group">
-                            <i class="fas fa-key"></i>
-                            <label>PassWord:</label>
-                            <input type="text" class="form-control" name="PassWord">
-                            @Html.ValidationMessageFor(x => x.PassWord)
-                        </div>
-                    </div>
-                    <input type="submit" class="btn btn-primary" value="Submit" />
-                </div>
-
-            }
-            @using (Html.BeginForm("register", "Career"))
-            {
-                <div class="tabcontent" id="sign-in">
-                    <div class="content carousel slide" id="myCarousel" data-interval="false" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li style="color:black" data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <div class="form-group">
-                                    <i class="fa fa-envelope"></i>
-                                    <label>Email:</label>
-                                    <input type="text" class="form-control" name="Email">
-                                </div>
-                                <div class="form-group">
-                                    <i class="fas fa-key"></i>
-                                    <label>PassWord:</label>
-                                    <input type="text" class="form-control" name="PassWord">
-                                </div>
-                                <div class="form-group">
-                                    <i class="fas fa-key"></i>
-                                    <label>ConfirmPassWord:</label>
-                                    <input type="text" class="form-control" name="ConfirmPassWord">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="form-group">
-                                    <i class="fa fa-envelope"></i>
-                                    <label>Email:</label>
-                                    <input type="text" class="form-control" name="Email">
-                                </div>
-                                <div class="form-group">
-                                    <i class="fas fa-key"></i>
-                                    <label>PassWord:</label>
-                                    <input type="text" class="form-control" name="PassWord">
-                                </div> <div class="form-group">
-                                    <i class="fas fa-key"></i>
-                                    <label>PassWord:</label>
-                                    <input type="text" class="form-control" name="PassWord">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="form-group">
-                                    <i class="fa fa-envelope"></i>
-                                    <label>Email:</label>
-                                    <input type="text" class="form-control" name="Email">
-                                </div>
-                              
-                            </div>
-
-                        </div>
-                    </div>
-                    <div style="float:right" class="nextpre">
-
-                        <a onclick="equalize()" class="" href="#myCarousel" data-slide="prev">
-                            Previous
-                        </a>
-                        <a onclick="equalize()" class="" href="#myCarousel" data-slide="next">
-                            Next
-
-                        </a>
-                    </div>
-                    <input type="submit" class="btn btn-primary" value="Submit" />
-                </div>
-            }
-        </div>
-    </div>
-</div>
-
-
-<script type="text/javascript">
-    /*
-    $maxDesc = 0;
-    function equalize() {
-        $('.item').each(function (i) {
-           
-            if ($(this).height() > $maxDesc) { $maxDesc = $(this).height(); }
-        });
-
-        $('.item').each(function (i) { $(this).height($maxDesc); });
-    }*/
-    function openCity(evt, cityName) {
-       
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
-      // equalize();
+  
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     }
 
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-</script>
+    <div class="page-content">
+        <div class="form-v8-content">
+            <div class=" form-left">
+                <img src="~/images/candidate1.jpeg" alt="form">
+            </div>
+            <div class="form-right">
+                <div class="tab">
+                    <div class="tab-inner">
+                        <button class="tablinks" onclick="openCity(event, 'sign-up')" id="defaultOpen">Sign Up</button>
+                    </div>
+                    <div class="tab-inner">
+                        <button class="tablinks" onclick="openCity(event, 'sign-in')">Sign In</button>
+                    </div>
+                </div>
+                @using (Html.BeginForm("login", "Career"))
+                {
+                    <div class="tabcontent" id="sign-up">
+                        <div class="content">
+                            <div class="form-group">
+                                <i class="fa fa-envelope"></i>
+                                <label>Email:</label>
+                                <input type="text" class="form-control" name="Email">
+                                @Html.ValidationMessageFor(x => x.Email)
+                            </div>
+                            <div class="form-group">
+                                <i class="fas fa-key"></i>
+                                <label>PassWord:</label>
+                                <input type="text" class="form-control" name="PassWord">
+                                @Html.ValidationMessageFor(x => x.PassWord)
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Submit" />
+                    </div>
+
+                }
+                @using (Html.BeginForm("register", "Career", FormMethod.Post, new { id= "register" }))
+                {
+                    <div class="tabcontent" id="sign-in">
+                        <div class="content carousel slide" id="myCarousel" data-interval="false" data-ride="carousel">
+                            <ol class="carousel-indicators" >
+                                <li style="color:black" data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="item active"  id="1">
+                                    <div class="form-group">
+                                        <i class="fa fa-envelope"></i>
+                                        <label>Email:</label>
+                                        <input type="text" class="form-control" name="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <i class="fas fa-key"></i>
+                                        <label>PassWord:</label>
+                                        <input type="text" class="form-control" name="PassWord">
+                                    </div>
+                                    <div class="form-group">
+                                        <i class="fas fa-key"></i>
+                                        <label>ConfirmPassWord:</label>
+                                        <input type="text" class="form-control" name="ConfirmPassWord">
+                                    </div>
+                                </div>
+                                <div class="item"  id="2">
+                                    <div class="form-group">
+                                        <i class="fa fa-envelope"></i>
+                                        <label>Email:</label>
+                                        <input type="text" class="form-control" name="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <i class="fas fa-key"></i>
+                                        <label>PassWord:</label>
+                                        <input type="text" class="form-control" name="PassWord">
+                                    </div> <div class="form-group">
+                                        <i class="fas fa-key"></i>
+                                        <label>PassWord:</label>
+                                        <input type="text" class="form-control" name="PassWord">
+                                    </div>
+                                </div>
+                                <div class="item"  id="3">
+                                    <div class="form-group">
+                                        <i class="fa fa-envelope"></i>
+                                        <label>Email:</label>
+                                        <input type="text" class="form-control" name="Email">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div style="float:right;margin-right:20px"  class="nextpre">
+
+                            <a onclick="equalize()" style="visibility:hidden" id="prev" href="#myCarousel" data-slide="prev">
+                                Previous
+                            </a>
+                            <a onclick="equalize()" id="next" href="#myCarousel" data-slide="next">
+                                Next
+
+                            </a>
+                          
+                        </div>
+                      
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        function myFunction()
+        {
+            document.getElementById('register').submit();
+
+        }
+
+      
+        function equalize() {
+            //var currentactive = $('.active').attr("id");
+          //      alert(currentactive.text());
+
+          
+            $('.carousel').on('slide.bs.carousel', function onSlide(ev) {
+                var id = ev.relatedTarget.id;
+              
+                switch (id) {
+                    case "1":
+                      
+                        $("#prev").css('visibility', 'hidden');
+                        $("#next").text("next");
+                        $("#next").attr("data-slide", "next");
+                        $("#next").removeAttr('onclick');
+                        break;
+                    case "2":
+                        $("#prev").css('visibility', 'visible');
+                        $("#next").text("next");
+                        $("#next").attr("data-slide", "next");
+                        $("#next").removeAttr('onclick');
+                        break;
+                    case "3":
+                        $("#prev").css('visibility', 'visible');
+                        $("#next").text("submit");
+                        $("#next").removeAttr("data-slide");
+                        $("#next").attr('onclick', "myFunction()");
+                        break;
+                    default:
+                    //the id is none of the above
+                }
+            })
+
+         
+        }
+        function openCity(evt, cityName) {
+
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+          
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
