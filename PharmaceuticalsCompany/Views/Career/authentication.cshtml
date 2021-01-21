@@ -23,9 +23,10 @@
                         <button class="tablinks" onclick="openCity(event, 'sign-in')">Sign In</button>
                     </div>
                 </div>
-                @using (Html.BeginForm("login", "Career"))
-                {
-                    <div class="tabcontent" id="sign-up">
+              
+                <div class="tabcontent" id="sign-up">
+                    @using (Html.BeginForm("login", "Career"))
+                    {
                         <div class="content">
                             <div class="form-group">
                                 <i class="fa fa-envelope"></i>
@@ -40,21 +41,30 @@
                                 @Html.ValidationMessageFor(x => x.PassWord)
                             </div>
                         </div>
-                        <input type="submit" class="btn btn-primary" value="Submit" />
-                    </div>
+                        <input type="submit" class="btn btn-primary"  style="margin-left:20px;width:95%;margin-bottom:10px" value="Submit" />
+                    }
+                </div>
 
-                }
-                @using (Html.BeginForm("register", "Career", FormMethod.Post, new { id= "register" }))
-                {
-                    <div class="tabcontent" id="sign-in">
-                        <div class="content carousel slide" id="myCarousel" data-interval="false" data-ride="carousel">
-                            <ol class="carousel-indicators" >
-                                <li style="color:black" data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#myCarousel" data-slide-to="1"></li>
-                                <li data-target="#myCarousel" data-slide-to="2"></li>
-                            </ol>
+             
+              
+                   
+                <div class="tabcontent" id="sign-in">
+                    @using (Html.BeginForm("register", "Career", FormMethod.Post, new { id = "register" }))
+                    {
+                        <ul class="progressbar">
+                            <li onclick="equalize()" class="active" id="p1" data-target="#myCarousel" data-slide-to="0">Step 1</li>
+                            <li onclick="equalize()" id="p2" data-target="#myCarousel" data-slide-to="1">Step 2</li>
+                            <li onclick="equalize()" data-target="#myCarousel" id="p3" data-slide-to="2">Step 3</li>
+
+                        </ul>
+                        <div class="clearfix"></div>
+
+
+                        <div class="content carousel slide " id="myCarousel" data-interval="false" data-ride="carousel">
+
+
                             <div class="carousel-inner">
-                                <div class="item active"  id="1">
+                                <div class="item active" id="1">
                                     <div class="form-group">
                                         <i class="fa fa-envelope"></i>
                                         <label>Email:</label>
@@ -71,7 +81,7 @@
                                         <input type="text" class="form-control" name="ConfirmPassWord">
                                     </div>
                                 </div>
-                                <div class="item"  id="2">
+                                <div class="item" id="2">
                                     <div class="form-group">
                                         <i class="fa fa-envelope"></i>
                                         <label>Email:</label>
@@ -87,7 +97,7 @@
                                         <input type="text" class="form-control" name="PassWord">
                                     </div>
                                 </div>
-                                <div class="item"  id="3">
+                                <div class="item" id="3">
                                     <div class="form-group">
                                         <i class="fa fa-envelope"></i>
                                         <label>Email:</label>
@@ -98,7 +108,7 @@
 
                             </div>
                         </div>
-                        <div style="float:right;margin-right:20px"  class="nextpre">
+                        <div style="float:right;margin-right:20px" class="nextpre">
 
                             <a onclick="equalize()" style="visibility:hidden" id="prev" href="#myCarousel" data-slide="prev">
                                 Previous
@@ -107,11 +117,11 @@
                                 Next
 
                             </a>
-                          
+
                         </div>
-                      
-                    </div>
-                }
+                    }
+                </div>
+               
             </div>
         </div>
     </div>
@@ -135,19 +145,27 @@
               
                 switch (id) {
                     case "1":
-                      
+                        $("#p1").removeClass('complete').addClass('active');
+                        $("#p2").removeClass('complete').removeClass('active');
+                        $("#p3").removeClass('complete').removeClass('active');
                         $("#prev").css('visibility', 'hidden');
                         $("#next").text("next");
                         $("#next").attr("data-slide", "next");
                         $("#next").removeAttr('onclick');
                         break;
                     case "2":
+                        $("#p1").removeClass('active').addClass('complete');
+                        $("#p2").removeClass('complete').addClass('active');
+                        $("#p3").removeClass('complete').removeClass('active');
                         $("#prev").css('visibility', 'visible');
                         $("#next").text("next");
                         $("#next").attr("data-slide", "next");
                         $("#next").removeAttr('onclick');
                         break;
                     case "3":
+                        $("#p1").removeClass('active').addClass('complete');
+                        $("#p2").removeClass('active').addClass('complete');
+                        $("#p3").removeClass('complete').addClass('active');
                         $("#prev").css('visibility', 'visible');
                         $("#next").text("submit");
                         $("#next").removeAttr("data-slide");

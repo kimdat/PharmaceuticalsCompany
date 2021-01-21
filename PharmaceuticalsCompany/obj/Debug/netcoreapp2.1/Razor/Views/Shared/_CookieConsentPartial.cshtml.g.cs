@@ -97,7 +97,11 @@ using Microsoft.AspNetCore.Http.Features;
                     ");
             EndContext();
             BeginContext(1234, 92, false);
+<<<<<<< HEAD:PharmaceuticalsCompany/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_CookieConsentPartial.cshtml.g.cs
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7a373162b66c459997801cf5a465c3a7", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "086c588e0ec14b61b58ac71296889d18", async() => {
+>>>>>>> 1686c76b7fc1e64b89b273a8a5520dcf7bc269ba:PharmaceuticalsCompany/obj/Debug/netcoreapp2.1/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs
                 BeginContext(1312, 10, true);
                 WriteLiteral("Learn More");
                 EndContext();
