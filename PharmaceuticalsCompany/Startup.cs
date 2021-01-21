@@ -67,7 +67,7 @@ namespace PharmaceuticalsCompany
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Career}/{action=Authentication}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

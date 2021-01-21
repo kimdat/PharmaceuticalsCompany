@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using PharmaceuticalsCompany.Models.Career;
-
+using PharmaceuticalsCompany.Models;
 
 namespace PharmaceuticalsCompany.Data
 {
@@ -14,7 +14,8 @@ namespace PharmaceuticalsCompany.Data
             : base(options)
         {
         }
-    
-      
+
+        public DbSet<kimdat> Kimdat { get; set; }
+        public DbSet<table> Table { get; set; }
     }
 }
