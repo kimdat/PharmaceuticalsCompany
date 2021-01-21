@@ -15,7 +15,6 @@ namespace PharmaceuticalsCompany.Data
         {
         }
 
-        public DbSet<kimdat> Kimdat { get; set; }
-        public DbSet<table> Table { get; set; }
+       
     }
 }
